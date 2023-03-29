@@ -34,12 +34,16 @@ public class Controller {
 	private A_Viviendas Vfile;
 
 	public Controller() {
-		
+	
+		vista = new VistaConsola();
+		insertArrendatario();
+		insertVivienda();
 		
 	}
 	
 	private static void insertVivienda() {
 		
+		ArrayList<Viviendas> viviendasList  = new ArrayList<>();
 		Viviendas newViviendas = getViviendaInfo();
 		
 		if(viviendasList.contains(newViviendas)) {
@@ -68,6 +72,7 @@ public class Controller {
 	
 	private static void insertArrendatario() {
 		
+		ArrayList<Arrendatarios> arrendatariosList  = new ArrayList<>();
 		Arrendatarios newArrendatario = getArrendatarioInfo();
 		
 		if(arrendatariosList.contains(newArrendatario)) {
