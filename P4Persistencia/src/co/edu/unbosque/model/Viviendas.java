@@ -1,67 +1,73 @@
 package co.edu.unbosque.model;
 
-public class Viviendas extends Guest{
-	
-	private int id;
-	private String dir;
-	private int space;
-	private	int habs;
-	
-	
-	public Viviendas(int id, int space, int habs, String dir, String name, String cc, int idg) {
-		super(idg, cc, name);
-		this.id = id; 
-		this.dir = dir;  
-		this.space= space;
-		this.habs= habs;		
-	}
+public class Viviendas {
 
+	private int vivienda_id;
+	private int space;
+	private String dir;
+	private String habs;
+	private String propietario;
+
+	public Viviendas(String dir, String habs, String propietario, int vivienda_id, int space) {
+		this.setVivienda_id(vivienda_id);
+		this.setDir(dir);
+		this.setSpace(space); 
+		this.setHabs(habs);
+		this.setPropietario(propietario);
+	}
 
 	@Override
 	public String toString() {
-		return "Viviendas [id=" + id + ", space=" + space + ", habs=" + habs + "]";
+		return "Viviendas [id=" + vivienda_id + ", space=" + space + ", habs=" + habs + "]";
 	}
-
 
 	public int getId() {
-		return id;
+		return vivienda_id;
 	}
-
 
 	public void setId(int id) {
-		this.id = id;
+		this.vivienda_id = id;
 	}
-
 
 	public int getSpace() {
 		return space;
 	}
 
-
 	public void setSpace(int space) {
 		this.space = space;
 	}
 
-
-	public int getHabs() {
+	public String getHabs() {
 		return habs;
 	}
 
-
-	public void setHabs(int habs) {
+	public void setHabs(String habs) {
 		this.habs = habs;
 	}
-
 
 	public String getDir() {
 		return dir;
 	}
 
-
 	public void setDir(String dir) {
 		this.dir = dir;
 	}
 
-	
+	public int getVivienda_id() {
+		return vivienda_id;
+	}
+
+	public void setVivienda_id(int vivienda_id) {
+		this.vivienda_id = vivienda_id;
+	}
+
+	public String getPropietario() {
+		return propietario;
+	}
+
+	public void setPropietario(String propietario) {
+		this.propietario = propietario;
+	}
+
 	
 }

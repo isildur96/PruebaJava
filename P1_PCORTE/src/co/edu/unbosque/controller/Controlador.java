@@ -47,14 +47,6 @@ public class Controlador {
 			
 			
 		}
-
-
-
-
-
-
-
-
 		private void abrirVentanaAgregar() {
 			// TODO Auto-generated method stub
 			vp.getPd().getBtn_agregar().addActionListener(new ActionListener() {
