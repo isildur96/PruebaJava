@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.unbosque.model.Arrendatarios;
+import co.edu.unbosque.model.IngresarDatos;
 import co.edu.unbosque.model.Viviendas;
 import co.edu.unbosque.model.persistance.A_Arrendatarios;
 import co.edu.unbosque.model.persistance.A_Viviendas;
@@ -14,7 +15,7 @@ public class Controller {
 
 	public static List<Arrendatarios> arrendatariosList;
 	public static List<Viviendas> viviendasList;
-
+    private IngresarDatos i = new IngresarDatos();
 	// POSICION DEL MENU
 	public static int menu;
 
@@ -34,30 +35,32 @@ public class Controller {
 	private A_Viviendas Vfile;
 
 	public Controller() {
-	
+	 
 		vista = new VistaConsola();
-		insertArrendatario();
+	
 		insertVivienda();
+		
 		
 	}
 	
 	private static void insertVivienda() {
 		
 		ArrayList<Viviendas> viviendasList  = new ArrayList<>();
-		Viviendas newViviendas = getViviendaInfo();
+		//Viviendas newViviendas = getViviendaInfo();
 		
-		if(viviendasList.contains(newViviendas)) {
+		//if(viviendasList.contains(newViviendas)) {
 			vista.mostrarInformacion("La vivienda ya ha sido registrada");
-		}else {
-			viviendasList.add(newViviendas);
+	//	}else {
+		//	viviendasList.add(newViviendas);
 			vista.mostrarInformacion("la vivienda ha sido añadida correctamente");
 		}
-	}
+	//}
 	
-	private static Viviendas getViviendaInfo() {
+	private Viviendas getViviendaInfo() {
 		
-		String dir, habs, prop;
-		int vivienda_id, space;
+		String dir=null, habs=null, prop=null;
+		int vivienda_id=0, space=0;
+		Viviendas viv = new Viviendas(dir, habs, prop, vivienda_id, space); 
 		
 		dir = vista.leerDatoString("Ingrese la direccion de la propiedad: ");
 		vivienda_id = vista.leerDatoEntero("Ingrese el id de la propiedad");
@@ -65,39 +68,33 @@ public class Controller {
 		vista.mostrarInformacion("ingrese el numero de habitaciones");
 		habs = vista.leerDatoString("ejm : ESTUDIO ó 1 HABITACION ó 2 HABITACIONES ó 3 HABITACIONES");
 		prop = vista.leerDatoString("Ingrese el nombre del propietario");
-		Viviendas vivienda = new Viviendas(dir, habs, prop, vivienda_id, space); 
+
 		
-		return vivienda;
+		return viv;
 	}
 	
-	private static void insertArrendatario() {
+	private  Arrendatarios addArrendatario() {
 		
-		ArrayList<Arrendatarios> arrendatariosList  = new ArrayList<>();
-		Arrendatarios newArrendatario = getArrendatarioInfo();
+		int iId=0, vId=0;
+		String iCC=null, iName=null, cuota=null, date=null;
+		Arrendatarios ar = new Arrendatarios(iId, vId, iCC, iName, cuota, date); 
 		
-		if(arrendatariosList.contains(newArrendatario)) {
-			vista.mostrarInformacion("EL arrendatario ya ha sido registrado");
-		}else {
-			arrendatariosList.add(newArrendatario);
-			vista.mostrarInformacion("El arrendatario se ha añadido correctamente");
-		}
-	}
+		IngresarDatos io = new IngresarDatos();
+		ar.setInquilino_id(vista.leerDatoEntero("Ingrese el ID del arrendatario: "));
+		ar.setInquilino_cc(vista.leerDatoString("Ingrese la CC del arrendador: "));
+		ar.setInquilino_name(vista.leerDatoString("Ingrese el nombre del arrendador: "));
+		ar.setViviendas_id(vista.leerDatoEntero("Ingres el ID de la propiedad: "));
+		ar.setCuota(vista.leerDatoString("Ingrese el valor de la cuota ejm $xxx.xxx COP"));
+		ar.setDate(vista.leerDatoString("ingrese la fecha de pago en formato dd/mm/aaaa"));
+		
+		
+		
+		
+		
+		vista.mostrarInformacion(i.guardar(ar));
 	
-	private static Arrendatarios getArrendatarioInfo() {
 		
-		int iId, vId;
-		String iCC, iName, cuota, date;
-		
-		
-		iId = vista.leerDatoEntero("Ingrese el ID del arrendatario: ");
-		iCC= vista.leerDatoString("Ingrese la CC del arrendador: ");
-		iName = vista.leerDatoString("Ingrese el nombre del arrendador: ");
-		vId = vista.leerDatoEntero("Ingres el ID de la propiedad: ");
-		cuota = vista.leerDatoString("Ingrese el valor de la cuota ejm $xxx.xxx COP");
-		date = vista.leerDatoString("ingrese la fecha de pago en formato dd/mm/aaaa");
-		Arrendatarios arrendatarios = new Arrendatarios(iId, vId, iCC, iName, cuota, date); 
-		
-		return arrendatarios;
+		return ar;
 	}
 	
 }

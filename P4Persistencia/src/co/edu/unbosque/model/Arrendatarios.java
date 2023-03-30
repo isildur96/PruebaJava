@@ -20,8 +20,13 @@ public class Arrendatarios  {
 		this.setDate(date); 
 		this.setViviendas_id(viviendas_id);
 		
+		
 	}
-
+	@Override
+	public String toString() {
+		
+		return super.toString();
+	}
 	public int getViviendas_id() {
 		return viviendas_id;
 	}
