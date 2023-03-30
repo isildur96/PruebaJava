@@ -15,18 +15,17 @@ public class Viviendas {
 		this.setHabs(habs);
 		this.setPropietario(propietario);
 	}
-
+	
+	public Viviendas(){
+		
+	}
 	@Override
 	public String toString() {
-		return "Viviendas [id=" + vivienda_id + ", space=" + space + ", habs=" + habs + "]";
-	}
-
-	public int getId() {
-		return vivienda_id;
-	}
-
-	public void setId(int id) {
-		this.vivienda_id = id;
+		return "Propiedad # " + getVivienda_id() + " [ Dirección: " + getDir() + " ] " + "n\\"
+				+ "Tamaño : ## " + getSpace() + "n\\"
+				+ "N° de habitaciones : (" + getHabs() + ")" + "n\\"
+				+ "Propietario: " + getPropietario() + "n\\"
+				+ "******************************************************";
 	}
 
 	public int getSpace() {
