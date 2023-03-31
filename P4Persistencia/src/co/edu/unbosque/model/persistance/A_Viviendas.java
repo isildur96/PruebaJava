@@ -1,7 +1,9 @@
 package co.edu.unbosque.model.persistance;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
 
 import co.edu.unbosque.model.Viviendas;
 
@@ -13,23 +15,26 @@ private File file;
 
 	public A_Viviendas() {
 		// TODO Auto-generated constructor stub
-		file = new File("src\\co\\edu\\unbosque\\model\\persistance\\Viviendas.txt");
+		file = new File("Viviendas.txt");
 		viv = new Viviendas();
 	}	
 	public A_Viviendas(File file) {
 		this.file = file;
 	}
 	
-	public String escribirEnArchivo(String texto) {
+	public String escribirEnArchivo(ArrayList<Viviendas>viviendasList) {
 		String rta = "";
-		texto = viv.toString();
+		
 		try {
-			//System.out.println("escribiendo archivo");
+			System.out.println("escribiendo archivo");
 			FileWriter lineatxt = new FileWriter(file);
-			String linea_archivo = texto;
-			lineatxt.write(linea_archivo + "\r\n");
-			lineatxt.close();
+			for (Viviendas v: viviendasList) {
+				lineatxt.write(v.toString() + "\r\n");
+			}
+			System.out.println("escribiendo archivo 2");
 			rta = "Linea ingresada con exito";
+			lineatxt.close();
+			
 		}catch (Exception e) {
 			rta = "No fue posible registrar la informacion en el archivo";
 		}

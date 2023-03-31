@@ -13,12 +13,12 @@ public class Arrendatarios  {
 	
 	public Arrendatarios(int inquilino_id, int viviendas_id, String inquilino_cc, String inquilino_name
 		,String cuota, String date) {
-		this.setInquilino_id(inquilino_id);
-		this.setInquilino_cc(inquilino_cc);
-		this.setInquilino_name(inquilino_name);
-		this.setCuota(cuota);
-		this.setDate(date); 
-		this.setViviendas_id(viviendas_id);
+		this.inquilino_id = inquilino_id;
+		this.inquilino_cc = inquilino_cc;
+		this.inquilino_name = inquilino_name;
+		this.cuota = cuota;
+		this.date = date; 
+		this.viviendas_id =viviendas_id;
 		
 		
 	}
@@ -76,6 +76,11 @@ public class Arrendatarios  {
 
 	public void setInquilino_name(String inquilino_name) {
 		this.inquilino_name = inquilino_name;
+	}
+	public void buscarDatos(int iId) {
+		this.inquilino_id = iId;
+		
+		
 	}
 	
 	

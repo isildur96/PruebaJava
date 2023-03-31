@@ -39,11 +39,11 @@ public class IngresarDatos {
 
 		String z = "";
 		if (viviendasList.contains(v)) {
-			z = ("La vivienda ya ha sido registrado");
+			z = ("La vivienda ya ha sido registrada");
 		} else {
 			viviendasList.add(v);
 			z = ("La vivienda se ha añadido correctamente");
-			aV.escribirEnArchivo(z);
+			//aV.escribirEnArchivo(v);
 		}
 
 		return z;
@@ -54,4 +54,29 @@ public class IngresarDatos {
 		
 	}
 
+	public static List<Arrendatarios> getArrendatariosList() {
+		return arrendatariosList;
+	}
+
+	public static void setArrendatariosList(List<Arrendatarios> arrendatariosList) {
+		IngresarDatos.arrendatariosList = arrendatariosList;
+	}
+
+	public static List<Viviendas> getViviendasList() {
+		return viviendasList;
+	}
+
+	public static void setViviendasList(List<Viviendas> viviendasList) {
+		IngresarDatos.viviendasList = viviendasList;
+	}
+
+	public A_Viviendas getaV() {
+		return aV;
+	}
+
+	public void setaV(A_Viviendas aV) {
+		this.aV = aV;
+	}
+	 
+	
 }
