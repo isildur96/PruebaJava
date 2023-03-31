@@ -20,14 +20,17 @@ public class Arrendatarios  {
 		this.date = date; 
 		this.viviendas_id =viviendas_id;
 		
+	}
+	
+	public Arrendatarios() {
 		
 	}
 	@Override
 	public String toString() {
 		
-		return " Iquilino # " + inquilino_id + "[documento de identificación: " + inquilino_cc + " - [Asignación: Propiedad # " + viviendas_id + "n\\"
-				+ "Nombre: " + inquilino_name + "n\\" 
-				+ "Cuota Mensual " + cuota + "/ Fecha de Pago :" + date + "n\\"
+		return "Iquilino # " + inquilino_id + "[documento de identificación: " + inquilino_cc + " - [Asignación: Propiedad # " + viviendas_id + "\n"
+				+ "Nombre: " + inquilino_name + "\n" 
+				+ "Cuota Mensual: $ " + cuota + " COP " + " / Fecha de Pago :" + date + "\n"
 				+ "++++++++++++++++";
 		}
 	public int getViviendas_id() {

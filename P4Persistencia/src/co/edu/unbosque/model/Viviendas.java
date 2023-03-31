@@ -21,10 +21,10 @@ public class Viviendas {
 	}
 	@Override
 	public String toString() {
-		return "Propiedad # " + vivienda_id + " [ Dirección: " + dir + " ] " + "\r \n"
-				+ "Tamaño : ## " + space + "\r \n"
-				+ "N° de habitaciones : (" + habs + ")" + "\r \n"
-				+ "Propietario: " + propietario+ "\r \n"
+		return "Propiedad # " + vivienda_id + " [ Dirección: " + dir + " ] " + "\n"
+				+ "Tamaño : ## " + space + " m2" + "\n"
+				+ "N° de habitaciones : (" + habs + ")" + "\n"
+				+ "Propietario: " + propietario+ "\n"
 				+ "******************************************************";
 	}
 
