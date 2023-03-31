@@ -30,7 +30,7 @@ private File file;
 		String rta = "";
 		
 		try {
-			FileWriter lineatxt = new FileWriter(file);
+			FileWriter lineatxt = new FileWriter(file, true);
 			for (Viviendas v: viviendasList) {
 				lineatxt.write(v.toString() + "\r\n");
 			}

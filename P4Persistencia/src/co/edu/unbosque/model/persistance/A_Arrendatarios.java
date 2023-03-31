@@ -29,7 +29,7 @@ public class A_Arrendatarios {
 		
 		try {
 			
-			FileWriter lineatxt = new FileWriter(file);
+			FileWriter lineatxt = new FileWriter(file, true);
 			for (Arrendatarios a: arrendatariosList) {
 				lineatxt.write(a.toString() + "\r\n");
 			}
