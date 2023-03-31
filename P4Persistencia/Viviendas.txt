@@ -1,0 +1,5 @@
+Propiedad # 23 [ Dirección: 23 ]  
+Tamaño : ## 23 
+N° de habitaciones : (2) 
+Propietario: 23 
+******************************************************
