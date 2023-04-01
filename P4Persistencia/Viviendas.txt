@@ -1,10 +1,5 @@
-Propiedad # 1 [ Dirección: cra 48 # 150 - 46 ]  
-Tamaño : ## 67 m2 
-N° de habitaciones : (3 HABITACIONES) 
-Propietario: Joaquin 
-******************************************************
-Propiedad # 1 [ Dirección: asd ] 
-Tamaño : ## 12 m2
-N° de habitaciones : (asd)
-Propietario: asd
+Propiedad # 1 [ Dirección: cra 48 # 150 - 46  ] 
+Tamaño : ## 49 m2
+N° de habitaciones : (3 HABITACIONES )
+Propietario: Juaquín Serrano 
 ******************************************************

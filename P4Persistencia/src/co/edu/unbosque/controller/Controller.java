@@ -19,22 +19,18 @@ public class Controller {
 
 	// POSICION DEL MENU
 	public static int menu;
-
 	// INSTANCIA DE LA VISTA
 	private static VistaConsola vista;
-
 	// INSTANCIA DE LA CLASE ARRENDATARIOS
 	private static Arrendatarios ar;
-
 	// INSTANCIA DE LA CLASE VIVIENDAS
 	private Viviendas viv;
-
-	// INSTANCIA DE LA CLASE A_ARRENDATARIOS
+	// INSTANCIA DE LA CLASE A_ARRETDATARIOS
 	private A_Arrendatarios Afile;
-
 	// INSTANCIA DE LA CLASE A_VIVIENDAS
 	private A_Viviendas Vfile;
 
+	// METODO CONSTRUCTOR DEL CONTROLADO
 	public Controller() {
 
 		vista = new VistaConsola();
@@ -44,64 +40,57 @@ public class Controller {
 		vDto = new ViviendasDto();
 		aDto = new ArrendatariosDto();
 
-		// addVivienda();
-		// addArrendatario();
 		funcionar();
 	}
 
-	
 	public void funcionar() {
-		int opcion= 0;
-		
-		
-		String menu = ".:Administrador de Viviendas/Arrendatarios:." + "\n" 
-					+ "\t1. Agregar Vivienda"  + "\n"
-					+ "\t2. Agregar Arrendatario" + "\n"
-					+ "\t3. Consultar Vivienda"  + "\n"
-					+ "\t4. Consultar Arrendatario" + "\n"
-					+ "\t5. Salir" + "\n"
-					+ "Digite opción: ";
+		int opcion = 0;
+
+		String menu = ".:Administrador de Viviendas/Arrendatarios:." + "\n" + "\t1. Agregar Vivienda" + "\n"
+				+ "\t2. Agregar Arrendatario" + "\n" + "\t3. Consultar Vivienda" + "\n" + "\t4. Consultar Arrendatario"
+				+ "\n" + "\t5. Salir" + "\n" + "Digite opción: ";
 		do {
 			opcion = vista.leerDatoEntero(menu);
-					
+
 			switch (opcion) {
-			case 1: 
+			case 1:
 				addVivienda();
-				
+
 				break;
-			case 2: 
+			case 2:
 				addArrendatario();
 				break;
-			case 3: 
+			case 3:
 				leerViviendas();
 				break;
-			case 4: 
+			case 4:
 				leerArrendatarios();
-				break;	
-				
+				break;
+
 			case 5:
 				vista.mostrarInformacion("Hasta Pronto");
 				break;
 			default:
 				vista.mostrarInformacion("Error: Opción Invalida");
 			}
-			
-		}while(opcion != 5);
-		
+
+		} while (opcion != 5);
+
 	}
-	
-	
+
 	public void addVivienda() {
 
 		String dir = vista.leerDatoString("Ingrese la direccion de la propiedad: ");
 		String vivienda_id = vista.leerDatoString("Ingrese el id de la propiedad");
 		int space = vista.leerDatoEntero("ingrese el espacio en metros de la propiedad");
 		vista.mostrarInformacion("ingrese el numero de habitaciones");
-		String habs = vista.leerDatoString("ejm : ESTUDIO ó 1 HABITACION ó 2 HABITACIONES ó 3 HABITACIONES");;
+		String habs = vista.leerDatoString("ejm : ESTUDIO ó 1 HABITACION ó 2 HABITACIONES ó 3 HABITACIONES");
+		;
 		String prop = vista.leerDatoString("Ingrese el nombre del propietario");
 		vDto.getViviendasDao().agregarVivienda(dir, habs, prop, vivienda_id, space, vDto.getViviendasList());
-		//vista.mostrarInformacion(vDto.getViviendasDao().verViviendas(vDto.getViviendasList()));
 		System.out.println(vDto.getViviendasDao().getFile().escribirEnArchivo(vDto.getViviendasList()));
+		System.out.println("\n" + "\n");
+
 	}
 
 	public void addArrendatario() {
@@ -111,19 +100,23 @@ public class Controller {
 		String iName = vista.leerDatoString("Ingrese el nombre del inquilino: ");
 		String cuota = vista.leerDatoString("Ingrese el valor de la cuota: " + "\n" + "EJM xxx.xxx");
 		String fPago = vista.leerDatoString("Ingrese la fecha de pago formato dd/mm/aaaa");
-
 		aDto.getArrendatariosDao().agregarArrendatarios(iId, vId, iCc, iName, cuota, fPago,
 				aDto.getArrendatariosList());
-		//vista.mostrarInformacion(aDto.getArrendatariosDao().verArrendatarios(aDto.getArrendatariosList()));
 		System.out.println(aDto.getArrendatariosDao().getFile().escribirEnArchivo(aDto.getArrendatariosList()));
+		System.out.println("\n" + "\n");
 
 	}
-	
+
 	public void leerArrendatarios() {
 		System.out.println(aDto.getArrendatariosDao().getFile().leerArchivo(aDto.getArrendatariosList()));
+		System.out.println("\n" + "\n");
+
 	}
 
 	public void leerViviendas() {
 		System.out.println(vDto.getViviendasDao().getFile().leerArchivo(vDto.getViviendasList()));
+		System.out.println("\n" + "\n");
+
 	}
+
 }

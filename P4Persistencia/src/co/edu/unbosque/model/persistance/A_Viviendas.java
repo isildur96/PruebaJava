@@ -34,11 +34,11 @@ private File file;
 			for (Viviendas v: viviendasList) {
 				lineatxt.write(v.toString() + "\r\n");
 			}
-			rta = "Linea ingresada con exito";
+			rta = "\n" + "Vivienda Agregada con exito.";
 			lineatxt.close();
 			
 		}catch (Exception e) {
-			rta = "No fue posible registrar la informacion en el archivo";
+			rta = "\n " + "No fue posible registrar la vivienda en el archivo";
 		}
 		return rta;
 	
@@ -71,7 +71,7 @@ private File file;
 				rta = "El archivo no existe";
 			}
 		}catch (Exception e) {
-			rta = "El archiv no pudo ser leido";
+			rta = "El archivo no pudo ser leido";
 		}
 		
 		return rta;

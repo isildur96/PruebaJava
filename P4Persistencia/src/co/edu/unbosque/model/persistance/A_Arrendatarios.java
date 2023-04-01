@@ -33,11 +33,11 @@ public class A_Arrendatarios {
 			for (Arrendatarios a: arrendatariosList) {
 				lineatxt.write(a.toString() + "\r\n");
 			}
-			rta = "Linea ingresada con exito";
+			rta = "\n " + "Linea arrendatario ingresado con exito";
 			lineatxt.close();
 			
 		}catch (Exception e) {
-			rta = "No fue posible registrar la informacion en el archivo";
+			rta = "No fue posible registrar el arrendatario en el archivo";
 		}
 		return rta;
 	
@@ -70,7 +70,7 @@ public class A_Arrendatarios {
 				rta = "El archivo no existe";
 			}
 		}catch (Exception e) {
-			rta = "El archiv no pudo ser leido";
+			rta = "El archivo no pudo ser leido";
 		}
 		
 		return rta;
