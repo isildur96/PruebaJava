@@ -17,6 +17,10 @@ private Viviendas viv;
 
 private File file;
 
+/**
+ * 
+ * A_Viviendas: Clase para crear el archivo de texto y el array de tipo viviendas
+ */
 	public A_Viviendas() {
 		// TODO Auto-generated constructor stub
 		file = new File("Viviendas.txt");
@@ -25,7 +29,13 @@ private File file;
 	public A_Viviendas(File file) {
 		this.file = file;
 	}
-	
+	/**
+	 * escribirEnArchivo: Metodo para escribir el Array creado en controller.addVivienda en un archivio de texto
+	 * 
+	 * @param viviendasList : Array de Viviendas creado. 
+	 * 
+	 * @return rta : mensaje si fue posible o no guardarlo en el archivo de texto
+	 */
 	public String escribirEnArchivo(ArrayList<Viviendas>viviendasList) {
 		String rta = "";
 		
@@ -43,7 +53,12 @@ private File file;
 		return rta;
 	
 	}	
-	
+	/**
+	 * 
+	 * leerArchivo: metodo para leer el archivo de texto donde se almacena el array de viviendas
+	 * @param arrendatariosList : Array de viviendas creado
+	 * @return rta: mensaje si el archivo pudo ser leido o no. 
+	 */
 	public String leerArchivo(ArrayList<Viviendas>viviendasList) {
 		String rta = "";
 		FileInputStream fis = null;

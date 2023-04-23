@@ -30,19 +30,26 @@ public class Controller {
 	// INSTANCIA DE LA CLASE A_VIVIENDAS
 	private A_Viviendas Vfile;
 
-	// METODO CONSTRUCTOR DEL CONTROLADO
+	/**
+	 * Controller: Metodo constructor del controlador
+	 * 
+	 */
+	
 	public Controller() {
 
 		vista = new VistaConsola();
-		viv = new Viviendas();
-		Vfile = new A_Viviendas();
-		Afile = new A_Arrendatarios();
 		vDto = new ViviendasDto();
 		aDto = new ArrendatariosDto();
 
 		funcionar();
 	}
 
+	/**
+	 * Funcionar: Permite que se imprima el menú, y se utilicen las opciones 
+	 * del código.
+	 * 
+	 */
+	
 	public void funcionar() {
 		int opcion = 0;
 
@@ -78,6 +85,12 @@ public class Controller {
 
 	}
 
+	/**
+	 * addVivienda: Añadir vivienda en un array de tipo vivienda, y guardarlo en el archivo de texto
+	 * 
+	 */
+	
+	
 	public void addVivienda() {
 
 		String dir = vista.leerDatoString("Ingrese la direccion de la propiedad: ");
@@ -92,6 +105,12 @@ public class Controller {
 		System.out.println("\n" + "\n");
 
 	}
+	
+	/**
+	 * add arrendatario: permite crear un arrendatario y guardarlo en un array para despúes 
+	 * 		ser guardado en el archivo de texto
+	 * 
+	 */
 
 	public void addArrendatario() {
 		int iId = vista.leerDatoEntero("Ingrese el ID del inquilino : ");
@@ -107,12 +126,21 @@ public class Controller {
 
 	}
 
+	/**
+	 * leerArrendatarios: Permite leer el contenido del archivo de texto "Arrendatarios.txt"
+	 * 
+	 */
 	public void leerArrendatarios() {
 		System.out.println(aDto.getArrendatariosDao().getFile().leerArchivo(aDto.getArrendatariosList()));
 		System.out.println("\n" + "\n");
 
 	}
 
+	/**
+	 * 
+	 * 	 * leerArrendatarios: Permite leer el contenido del archivo de texto "Viviendas.txt"
+	 */
+	
 	public void leerViviendas() {
 		System.out.println(vDto.getViviendasDao().getFile().leerArchivo(vDto.getViviendasList()));
 		System.out.println("\n" + "\n");

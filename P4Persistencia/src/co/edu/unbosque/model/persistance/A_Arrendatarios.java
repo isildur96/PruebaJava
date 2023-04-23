@@ -9,12 +9,21 @@ import java.util.ArrayList;
 
 import co.edu.unbosque.model.Arrendatarios;
 
-
+/**
+ * 
+ * @author juane
+ *
+ */
 public class A_Arrendatarios {
-	
+
 	private Arrendatarios arr;
 	private File file;
 
+	
+/**
+ * A_Arrendatarios: Metodo constructor del la clase, instanciando arrendatarios y el archivo txt
+ * 	
+ */
 	public A_Arrendatarios() {
 		// TODO Auto-generated constructor stub
 		file = new File("Arrendatarios.txt");
@@ -23,7 +32,14 @@ public class A_Arrendatarios {
 	public A_Arrendatarios(File file) {
 		this.file = file;
 	}
-	
+
+	/**
+	 * escribirEnArchivo: Metodo para escribir el Array creado en controller.addArrendatario en un archivio de texto
+	 * 
+	 * @param arrendatariosList : Array de arrendatarios creado. 
+	 * 
+	 * @return rta : mensaje si fue posible o no guardarlo en el archivo de texto
+	 */
 	public String escribirEnArchivo(ArrayList<Arrendatarios>arrendatariosList) {
 		String rta = "";
 		
@@ -43,6 +59,12 @@ public class A_Arrendatarios {
 	
 	}	
 	
+	/**
+	 * 
+	 * leerArchivo: metodo para leer el archivo de texto donde se almacena el array de arrendatarios
+	 * @param arrendatariosList : Array de arrendatarios creado
+	 * @return rta: mensaje si el archivo pudo ser leido o no. 
+	 */
 	public String leerArchivo(ArrayList<Arrendatarios>arrendatariosList) {
 		String rta = "";
 		FileInputStream fis = null;

@@ -7,7 +7,16 @@ public class Viviendas {
 	private String dir;
 	private String habs;
 	private String propietario;
-
+/**
+ * 
+ * Viviendas : Clase para definir los atributos de un objeto de tipo vivienda.
+ * @param dir : direccion de la vivienda
+ * @param habs : habitaciones de la vivienda
+ * @param propietario : nombre del propietario de la vivienda
+ * @param vivienda_id : id de la vivienda asignada por el usuario
+ * @param space : esácop en metros 2 de la vivienda
+ */
+	
 	public Viviendas(String dir, String habs, String propietario, String vivienda_id, int space) {
 		this.vivienda_id = vivienda_id;
 		this.dir = dir;

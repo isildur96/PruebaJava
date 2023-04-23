@@ -7,6 +7,11 @@ public class ViviendasDto {
 	private ArrayList<Viviendas> viviendasList;
 	private ViviendasDao viviendasDao;
 	
+	/**
+	 * 
+	 * ViviendasDto: Clase para crear el array de tipo Viviendas y asignar sus getter setters
+	 */
+	
 	public ViviendasDto() {
 		viviendasList = new ArrayList<Viviendas>();
 		viviendasDao = new ViviendasDao();

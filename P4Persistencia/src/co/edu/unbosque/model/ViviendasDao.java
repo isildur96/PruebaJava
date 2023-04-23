@@ -5,13 +5,24 @@ import java.util.ArrayList;
 import co.edu.unbosque.model.persistance.A_Viviendas;
 
 public class ViviendasDao {
+
+/**
+ * ViviendasDao: Clase para ingresar, buscar y ver los arrays de tipo Viviendas
+ * 	
+ */
 	
 	private A_Viviendas file;
 
+	
 	public ViviendasDao() {
 		file = new A_Viviendas();
 	}
 
+	/**
+	 * verViviendas: Metodo para verificar que haya contenido en el ararray
+	 * @param 
+	 * @return texto : el contenido del array
+	 */
 	public String verViviendas(ArrayList<Viviendas> datos) {
 		ArrayList<Viviendas> viviendasList = datos;
 		String texto = "";
@@ -22,6 +33,12 @@ public class ViviendasDao {
 
 	}
 
+	/**
+	 * buscarVivienda : Metodo para buscar contenido en el array Viviendas
+	 * @param id : id de vivienda para verificar que esté en el array
+	 * @param viviendasList : Array de viviendas a buscar en 
+	 * @return
+	 */
 	public Viviendas buscarVivienda(String id, ArrayList<Viviendas> viviendasList) {
 		Viviendas encontrado = null;
 
@@ -35,6 +52,16 @@ public class ViviendasDao {
 		return encontrado;
 	}
 
+	/**
+	 * agregarVivienda: Metodo para agregar una vivienda al array del tipo Vivienda
+	 * @param dir : direccion de la vivienda.
+	 * @param habs : habitaciones de la vivienda
+	 * @param propietario : Nombre del propietario de la vivienda
+	 * @param vivienda_id : id asignada por el usuario a la vivienda
+	 * @param space : espacio en metros 2 de la vivienad
+	 * @param viviendasList : array de tipo vivienda
+	 * @return
+	 */
 	public boolean agregarVivienda(String dir, String habs, String propietario, String vivienda_id, int space,
 			ArrayList<Viviendas> viviendasList) {
 
@@ -48,31 +75,6 @@ public class ViviendasDao {
 		}
 	}
 
-	
-	public boolean eliminarVivienda(String dir, String habs, String propietario, String vivienda_id, int space,
-			ArrayList<Viviendas> viviendasList) {
-		boolean resp=false;
-		Viviendas v = buscarVivienda(vivienda_id, viviendasList);
-		if (v!= null) {
-			viviendasList.remove(v);
-			resp = true;
-		}
-		return resp;
-	}
-	
-	public boolean modificarVivienda(String dir, String habs, String propietario, String vivienda_id, int space,
-			ArrayList<Viviendas> viviendasList) {
-		boolean resp = false;
-		Viviendas v = buscarVivienda(vivienda_id, viviendasList);
-		if (v!=null) {
-			viviendasList.remove(v);
-			v.setHabs(habs);
-			viviendasList.add(v);
-			resp = true;
-		}
-		return resp;
-	}
-
 	public A_Viviendas getFile() {
 		return file;
 	}
@@ -80,5 +82,5 @@ public class ViviendasDao {
 	public void setFile(A_Viviendas file) {
 		this.file = file;
 	}
-	
+
 }

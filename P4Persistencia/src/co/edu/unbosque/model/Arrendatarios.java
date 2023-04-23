@@ -10,6 +10,15 @@ public class Arrendatarios  {
 	private String date;
 	private int viviendas_id;
 
+	/**
+	 * Arrendatarios : clase para definir los atributos de un objeto de tipo Arrendatario
+	 * @param inquilino_id : id del inquilino asignado por el usuario
+	 * @param viviendas_id : id de la vivienda asignado al inquilino 
+	 * @param inquilino_cc : identificacion del inquilino 
+	 * @param inquilino_name : nombre del inquilino 
+	 * @param cuota : valor de la cuota por el inmueble 
+	 * @param date : fecha de pago del inmueble
+	 */
 	
 	public Arrendatarios(int inquilino_id, int viviendas_id, String inquilino_cc, String inquilino_name
 		,String cuota, String date) {
